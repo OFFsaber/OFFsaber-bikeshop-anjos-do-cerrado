@@ -1,8 +1,6 @@
 // Array de ofertas: id do produto e % de desconto
 const ofertas = [
-  { id: 4, desconto: 15 }, // Pré-Treino Thunder
-  { id: 1, desconto: 10 }, // Whey Protein Gold
-  { id: 3, desconto: 20 }  // BCAA 2400
+  { id: 1, desconto: 5 }
 ];
 
 const svgCarrinho = `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2b80ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M5 6h2l1.68 9.39a2 2 0 0 0 2 1.61h6.72a2 2 0 0 0 2-1.61L21 8H7.42"/></svg>`;
@@ -10,106 +8,13 @@ const svgCarrinho = `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"
 window.produtos = [
     {
       id: 1,
-      nome: "Whey Protein Gold",
-      descricao: "Proteína premium para ganho de massa.",
-      preco: 149.90,
-      imagens: ["imagens/whey-gold.jpeg", "imagens/whey-gold-2.jpeg", "imagens/whey-gold-3.jpeg"],
+      nome: "Bike aro 29 South",
+      descricao: "Bike em perfeito estado,aro 29, quadro de alumino,freios hidraulicos,suspenção dianteira com trava no guidao,12v passador gts.",
+      preco: 2000.00,
+      imagens: ["imagens/bikesamuel.jpg", "imagens/bikesamuel1.jpg", "imagens/bikesamuel2.jpg"],
       video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "Whey Protein Gold é ideal para recuperação muscular pós-treino, contém 24g de proteína por dose."
-    },
-    {
-      id: 2,
-      nome: "Creatina Monohidratada",
-      descricao: "Auxilia no aumento de força.",
-      preco: 89.90,
-      imagens: ["imagens/creatina.jpeg"],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "A creatina é um composto natural ideal para treinos intensos, melhorando o desempenho físico."
-    },
-    {
-      id: 3,
-      nome: "BCAA 2400",
-      descricao: "Aminoácidos essenciais em cápsulas.",
-      preco: 69.90,
-      imagens: [
-        "imagens/bcaa.jpeg", 
-        "imagens/bcaa-2.jpeg", 
-        "imagens/bcaa-3.jpeg" 
-      ],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "O BCAA auxilia na recuperação muscular e evita o catabolismo, especialmente em atividades intensas."
-    },
-    {
-      id: 4,
-      nome: "Pré-Treino Thunder",
-      descricao: "Energia máxima para o treino.",
-      preco: 99.90,
-      imagens: ["imagens/pretreino.jpeg"],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "Pré-Treino Thunder proporciona energia e foco para treinos intensos, com ingredientes testados."
-    },
-    {
-      id: 5,
-      nome: "Albumina Egg Protein",
-      descricao: "Proteína natural do ovo.",
-      preco: 59.90,
-      imagens: ["imagens/albumina.jpeg"],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "Indicado para quem busca fonte proteica de lenta digestão. Mantém o anabolismo noturno."
-    },
-    {
-      id: 6,
-      nome: "Hipercalórico Mass Gainer",
-      descricao: "Ganho de peso e massa.",
-      preco: 139.90,
-      imagens: ["imagens/hipercalorico.jpeg"],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "Mass Gainer é perfeito para aumentar o aporte calórico diário e facilitar o ganho de massa muscular."
-    },
-    {
-      id: 7,
-      nome: "Glutamina Recovery",
-      descricao: "Rápida recuperação muscular.",
-      preco: 84.90,
-      imagens: ["imagens/glutamina.jpeg"],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "Glutamina auxilia na recuperação dos músculos e reforça o sistema imunológico."
-    },
-    {
-      id: 8,
-      nome: "Multivitamínico Ultra",
-      descricao: "Seu corpo sempre fortalecido.",
-      preco: 56.90,
-      imagens: ["imagens/multivitaminico.jpeg"],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "Suplemento completo de vitaminas e minerais, desenvolvia para praticantes de atividades físicas."
-    },
-    {
-      id: 9,
-      nome: "Omega 3 Fish Oil",
-      descricao: "Proteção cardiovascular.",
-      preco: 44.90,
-      imagens: ["imagens/omega3.jpeg"],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "Fonte de ácidos graxos essenciais, contribui para saúde do coração e do cérebro."
-    },
-    {
-      id: 10,
-      nome: "Termogênico Power",
-      descricao: "Auxilia na queima de gordura.",
-      preco: 99.90,
-      imagens: ["imagens/termogenico.jpeg"],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "Termogênico Power acelera o metabolismo e aumenta a energia para treinos de alta intensidade."
-    },
-    {
-      id: 11,
-      nome: "Termogênico Power123",
-      descricao: "Auxilia na queima de gordura.",
-      preco: 999.90,
-      imagens: ["imagens/termogenico.jpeg"],
-      video: "https://www.youtube.com/embed/McXWc4ZUjK0",
-      detalhes: "Termogênico Power acelera o metabolismo e aumenta a energia para treinos de alta intensidade."
+      detalhes: "Bike em perfeito estado,aro 29, quadro de alumino,freios hidraulicos,suspenção dianteira com trava no guidao,12v passador gts. aceito pix dinheiro e parcelo no cartão com acrescimo da maquina.",
+      telefone: "62993013054"
     }
   ];
   
@@ -146,10 +51,9 @@ window.produtos = [
         <p>${prod.descricao}</p>
         <strong>R$ ${prod.preco.toFixed(2)}</strong>
       </div>
-      <div style="margin-top:8px; display: flex; gap: 8px; align-items: center;">
-        <button class="btn-carrinho" title="Adicionar ao carrinho" onclick="event.stopPropagation(); adicionarCarrinho(${prod.id})" style="background:#fff;border:2px solid #2b80ff;border-radius:50%;padding:7px;display:flex;align-items:center;justify-content:center;transition:box-shadow .2s;box-shadow:0 2px 8px #e0eaff;cursor:pointer;">${svgCarrinho}</button>
-        <button class="btn-whatsapp" style="background:#25d366;color:#fff;font-weight:500;display:flex;align-items:center;gap:6px;padding:8px 16px;border:none;border-radius:6px;cursor:pointer;font-size:1em;transition:background .2s;" onclick="event.stopPropagation(); abrirModalCompra(${prod.id})">
-          <span style="font-size:1.2em;">💬</span> Comprar agora
+      <div style="margin-top:8px;">
+        <button class="btn-whatsapp" style="background:#25d366;color:#fff;font-weight:500;display:flex;align-items:center;gap:6px;padding:8px 16px;border:none;border-radius:6px;cursor:pointer;font-size:1em;transition:background .2s;width:100%;" onclick="event.stopPropagation(); abrirModalProduto(${prod.id})">
+          <span style="font-size:1.2em;">💬</span> Mais informações
         </button>
       </div>
     `;
@@ -248,3 +152,47 @@ window.produtos = [
   }
 
   window.abrirModalCompra = abrirModalCompra;
+
+  function abrirModalProduto(id) {
+    const prod = produtos.find(p => p.id === id);
+    if (!prod) return;
+
+    let modal = document.getElementById('modalProduto');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'modalProduto';
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100vw';
+        modal.style.height = '100vh';
+        modal.style.background = 'rgba(0,0,0,0.45)';
+        modal.style.display = 'flex';
+        modal.style.alignItems = 'center';
+        modal.style.justifyContent = 'center';
+        modal.style.zIndex = '9999';
+        document.body.appendChild(modal);
+    }
+
+    const mensagem = `Olá! Gostaria de mais informações sobre o produto: ${prod.nome}`;
+    const whatsappUrl = `https://wa.me/${prod.telefone}?text=${encodeURIComponent(mensagem)}`;
+
+    modal.innerHTML = `
+      <div style="background:#fff;padding:36px 28px 28px 28px;border-radius:18px;max-width:420px;width:100%;box-shadow:0 8px 32px #0002, 0 1.5px 8px #bbb;position:relative;animation:modalShow .3s;">
+        <button onclick="document.getElementById('modalProduto').remove()" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:2em;cursor:pointer;color:#bbb;transition:color .2s;">&times;</button>
+        <h2 style='margin-bottom:18px;text-align:center;font-size:1.5em;color:#2b80ff;letter-spacing:0.5px;display:flex;align-items:center;justify-content:center;gap:8px;'><span style='font-size:1.2em;'>ℹ️</span> Informações do Produto</h2>
+        <div style='margin-bottom:18px;border-bottom:1.5px solid #f0f0f0;padding-bottom:10px;display:flex;align-items:center;gap:12px;'>
+          <img src="${prod.imagens[0]}" alt="${prod.nome}" style="width:38px;height:38px;object-fit:cover;border-radius:8px;border:1.5px solid #eee;">
+          <div style='flex:1;'>${prod.nome}</div>
+          <div style='font-weight:500;color:#2b80ff;'>R$ ${prod.preco.toFixed(2)}</div>
+        </div>
+        <p style="margin-bottom:20px;color:#666;">${prod.detalhes}</p>
+        <a href="${whatsappUrl}" target="_blank" style="text-decoration:none;">
+          <button style="background:#25d366;color:#fff;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px;border:none;border-radius:8px;cursor:pointer;font-size:1.1em;width:100%;transition:background .2s;">
+            <span style="font-size:1.2em;">💬</span> Falar no WhatsApp
+          </button>
+        </a>
+      </div>
+      <style>@keyframes modalShow{from{transform:scale(0.95) translateY(40px);opacity:0;}to{transform:scale(1) translateY(0);opacity:1;}}</style>
+    `;
+  }

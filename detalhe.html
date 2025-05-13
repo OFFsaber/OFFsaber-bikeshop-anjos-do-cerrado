@@ -93,9 +93,7 @@
     .detalhe-desc { font-size: 1.1em; color: #444; margin-bottom: 18px; text-align:center; }
     .detalhe-btns { display: flex; gap: 18px; justify-content: center; margin-bottom: 24px; }
     .btn-detalhe { padding: 12px 28px; border: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer; transition: background .2s, box-shadow .2s; box-shadow: 0 2px 8px #e0eaff; display: flex; align-items: center; gap: 8px; }
-    .btn-detalhe-carrinho { background: #fff; color: #2b80ff; border: 2px solid #2b80ff; }
-    .btn-detalhe-carrinho:hover { background: #eaf4ff; }
-    .btn-detalhe-compra { background: #25d366; color: #fff; }
+    .btn-detalhe-compra { background: #25d366; color: #fff; width: 100%; max-width: 300px; justify-content: center; }
     .btn-detalhe-compra:hover { background: #1db954; }
     .detalhe-video-wrap {
       width: 100%;
@@ -199,40 +197,40 @@
              loading='lazy'>
       `).join('');
 
+      const mensagem = `Olá! Gostaria de mais informações sobre o produto: ${prod.nome}`;
+      const whatsappUrl = `https://wa.me/${prod.telefone}?text=${encodeURIComponent(mensagem)}`;
+
       document.getElementById('detalheMoldura').innerHTML = `
         <div class='detalhe-galeria'>
-          <button class='btn-nav prev' onclick='navegarImagem(-1)'>❮</button>
-          <button class='btn-nav next' onclick='navegarImagem(1)'>❯</button>
+          ${totalImagens > 1 ? '<button class="btn-nav prev" onclick="navegarImagem(-1)">❮</button>' : ''}
           <img src='${prod.imagens[0]}' alt='${prod.nome}' class='detalhe-img-principal'>
-          <div class='detalhe-miniaturas'>
-            ${miniaturas}
-          </div>
+          ${totalImagens > 1 ? '<button class="btn-nav next" onclick="navegarImagem(1)">❯</button>' : ''}
+          ${totalImagens > 1 ? `<div class='detalhe-miniaturas'>${miniaturas}</div>` : ''}
         </div>
-        <div class='detalhe-nome'>${prod.nome}</div>
+        <h1 class='detalhe-nome'>${prod.nome}</h1>
         <div class='detalhe-preco'>R$ ${prod.preco.toFixed(2)}</div>
-        <div class='detalhe-desc'>${prod.detalhes}</div>
+        <p class='detalhe-desc'>${prod.detalhes}</p>
         <div class='detalhe-btns'>
-          <button class='btn-detalhe btn-detalhe-carrinho' onclick='window.opener && window.opener.adicionarCarrinho(${prod.id});window.close();'>
-            <span>🛒</span> Adicionar ao carrinho
-          </button>
-          <button class='btn-detalhe btn-detalhe-compra' onclick='window.opener && window.opener.abrirModalCompra(${prod.id});window.close();'>
-            <span>💬</span> Comprar agora
-          </button>
+          <a href="${whatsappUrl}" target="_blank" style="text-decoration:none;width:100%;max-width:300px;">
+            <button class='btn-detalhe btn-detalhe-compra'>
+              <span style="font-size:1.2em;">💬</span> Mais informações
+            </button>
+          </a>
         </div>
         <div class='detalhe-video-wrap'>
-          <iframe src='${prod.video}' allowfullscreen></iframe>
+          <iframe src='${prod.video}' title='${prod.nome} - Vídeo' allowfullscreen></iframe>
         </div>
       `;
 
       atualizarBotoesNavegacao();
     }
 
-    // Tornar funções globais
-    window.trocarImagem = trocarImagem;
-    window.navegarImagem = navegarImagem;
-
-    // Inicializar quando a página carregar
-    window.onload = renderizarDetalhe;
+    // Inicializar quando o documento estiver pronto
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderizarDetalhe);
+    } else {
+      renderizarDetalhe();
+    }
   </script>
 </body>
 </html> 

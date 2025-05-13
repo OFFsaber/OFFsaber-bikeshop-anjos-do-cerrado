@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de suplementos com as melhores ofertas">
+  <title>Catálogo de Suplementos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header-bg">
+    <div class="container">
+      <img src="imagens/logo.png" alt="Logo Loja" class="logo">
+    </div>
+  </header>
+  <main class="container">
+    <section class="ofertas">
+      <h2>Ofertas em Destaque</h2>
+      <div class="oferta-cards">
+        <div class="oferta-card">
+          <span class="oferta-label">-15%</span>
+          <img src="imagens/pretreino.jpeg" alt="Pré-Treino Thunder" loading="lazy">
+          <p>Pré-Treino Thunder <b>R$ 84,90</b></p>
+        </div>
+        <div class="oferta-card">
+          <span class="oferta-label">-10%</span>
+          <img src="imagens/whey-gold.jpeg" alt="Whey Protein Gold" loading="lazy">
+          <p>Whey Protein Gold <b>R$ 134,91</b></p>
+        </div>
+        <div class="oferta-card">
+          <span class="oferta-label">-20%</span>
+          <img src="imagens/bcaa.jpeg" alt="BCAA 2400" loading="lazy">
+          <p>BCAA 2400 <b>R$ 55,92</b></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalogo">
+      <h2>Catálogo de Produtos</h2>
+      <div class="produtos-grid" id="produtosGrid">
+        <!-- Produtos renderizados via JS -->
+      </div>
+    </section>
+  </main>
+  
+  <button id="carrinhoBtn" class="carrinho-btn" aria-label="Abrir carrinho">
+    🛒 Carrinho (<span id="carrinhoQtd">0</span>)
+  </button>
+
+  <div id="carrinhoModal" class="modal-carrinho" role="dialog" aria-label="Carrinho de compras" style="display:none;">
+    <div class="modal-content">
+      <h3>Seu Carrinho</h3>
+      <ul id="listaCarrinho"></ul>
+      <div class="modal-actions">
+        <button id="whatsappBtn" class="whatsapp-btn">Falar no WhatsApp</button>
+        <button id="fecharCarrinho" class="btn-secundario">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="produto.js"></script>
+  <script src="carrinho.js"></script>
+</body>
+</html>
